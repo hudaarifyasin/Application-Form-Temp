@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Glassmorphism Form</title>
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form class="" name="appForm" action="https://script.google.com/macros/s/AKfycbyLng1wzfKYC6aE5qf4nZt33nIoQ7MKwAeNRybtdjzzArY7CY2uceiaJxIHoCqyy_aGmA/exec" method="POST">
+        <div class="bg">
+            <h3> Form</h3>
+        <div class="form-group">
+            <label for="exampleInputName">Full Name</label>
+            <input type="text" name="Name" class="form-control" id="exampleInputName" placeholder="Enter your name and surname" required="required">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1" required="required">Email address</label>
+            <input type="email" name="Email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email address">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" name="Address" class="form-control" id="inputAddress" placeholder="Address">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input type="text" name="City" class="form-control" id="inputCity" placeholder="City">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="example-tel-input" class="col-2 col-form-label">Contact</label>
+            <div class="col-10">
+              <input class="form-control" name="Contact" type="Contact" placeholder="+44 0000 000000" id="example-tel-input">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="example-date-input" class="col-3 col-form-label">Start Date</label>
+            <div class="col-10">
+              <input class="form-control" name="Starting_date" type="date" value="2020-02-01" id="example-date-input">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+
+        <script>
+			const scriptURL = 'https://script.google.com/macros/s/AKfycbyLng1wzfKYC6aE5qf4nZt33nIoQ7MKwAeNRybtdjzzArY7CY2uceiaJxIHoCqyy_aGmA/exec'
+			const form = document.forms['appForm']
+		  
+			form.addEventListener('submit', e => {
+			  e.preventDefault()
+			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(response => alert("Thank you! your form is submitted successfully." ))
+				.then(() => {  window.location.reload(); })
+				.catch(error => console.error('Error!', error.message))
+			})
+		  </script>
+</body>
+</html>
